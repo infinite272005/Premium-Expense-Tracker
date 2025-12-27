@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Expense Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+<div class="app-container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">ExpenseTracker</div>
+    <div class="header-right">
+      <button id="modeToggle">🌙</button>
+      <button id="authBtn">Login / Sign Up</button>
+    </div>
+  </header>
+
+  <!-- AUTH MODAL -->
+  <div class="modal" id="authModal">
+    <div class="modal-content">
+      <span class="close" id="authClose">&times;</span>
+      <h2 id="authTitle">Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button id="authSubmit">Submit</button>
+      <p id="switchAuth">Don't have an account? Sign Up</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="cards">
+      <div class="card">
+        <h3>Total Expenses</h3>
+        <h1 id="total">₹0</h1>
+      </div>
+      <div class="card">
+        <h3>Top Category</h3>
+        <h1 id="topCategory">-</h1>
+      </div>
+      <div class="card">
+        <h3>Last 7 Days</h3>
+        <h1 id="last7Days">₹0</h1>
+      </div>
+    </div>
+
+    <div class="add-expense">
+      <input id="title" placeholder="Expense Name">
+      <input id="amount" type="number" placeholder="Amount (₹)">
+      <select id="category">
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Shopping</option>
+        <option>Bills</option>
+        <option>Other</option>
+      </select>
+      <button id="addExpense">Add</button>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="expense-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="expenseList"></tbody>
+      </table>
+    </div>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
